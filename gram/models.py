@@ -52,15 +52,15 @@ class Posts(models.Model):
 
         return posts
 
-# class Follow(models.Model):
-#     '''
-#     Class that store a User and Profile follow status
-#     '''
-#     user = models.ForeignKey(User)
-#     profile = models.ForeignKey(Profile)
+class Follow(models.Model):
+    '''
+    Class that store a User and Profile follow status
+    '''
+    user = models.ForeignKey(User)
+    profile = models.ForeignKey(Profile)
 
-#     def __str__(self):
-#         return self.user.username
+    def __str__(self):
+        return self.user.username
 
 #     @classmethod
 #     def get_following(cls, user_id):
