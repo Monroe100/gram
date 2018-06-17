@@ -1,3 +1,7 @@
+## Instagram Clone
+
+## Author 
+Michelle Claire
 
 ## User Stories
 
