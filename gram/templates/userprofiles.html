@@ -1,0 +1,152 @@
+{% extends 'inherit/base.html' %} {% load static %}
+
+
+<!-- Styles block -->
+{% block styles %} {{block.super}}
+ {% endblock %}
+
+<!-- Content block -->
+{% block content %}
+
+
+<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+
+<body style="background-color:#d0aef1; font-family: 'Concert One', cursive;" >
+
+
+<div style="font-family: 'Concert One', cursive;">
+
+
+<nav class="navbar navbar-inverse" style="background-color:#c2bedb;">
+
+ <div class="container-fluid">
+
+   <div class="navbar-header">
+     <b><a style="font-size:40px;color:#d797ad;"class="navbar-brand" href="{% url 'profile' %}">Instagram</a></b>
+   </div>
+
+   <!-- Adding a search form  -->
+   <div class="col-sm-4 col-md-4 navbar-right">
+    <form style="font-size:40px;" class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+       <div class="input-group">
+         <input type="text" class="form-control" placeholder="Search user" name="profile">
+
+         <div class="input-group-btn">
+           <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+         </div>
+
+       </div>
+      </form>
+   </div>
+   <!-- search form end -->
+   <div class="col-sm-6 col-md-6" style="font-size:40px;">
+          {% if user.is_authenticated %}
+          <ul>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                        <span class="caret"></span>
+                    </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="/accounts/password/change">Change Password</a>
+                </li>
+                <li>
+                  <a href="/create/profile/">Create Profile</a>
+                </li>
+                <li>
+                  <a href="/create/post/">New post</a>
+                </li>
+                <li>
+                  <a href="/home/">Home</a>
+                </li>
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          {% else %}
+          <li>
+            <a class='btn btn-default' href="/accounts/login">Login</a>
+          </li>
+
+          {% endif %}
+        </div>
+ </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="row ">
+      <div class="container" style="background-color:#b48395; border-radius:35px; font-family: 'Lobster Two', cursive;">
+        <div class="col-md-4 col-sm-4  ">
+
+            {% for detail in info %} {% if check_if_following == 0 %}
+
+            <h1>
+                {{detail.user.username}}
+                <a href=" {% url 'follow' detail.id%}">
+                    <button type="button" name="button" class="btn btn-primary btn-md  pull-right  ">Follow </button>
+                </a>
+            </h1>
+            <img src="{{pic.image.url}}" alt="{{Image.image_name}}" class="img-responsive " width="80%"
+               height="40%x" style="padding:5px;"> {% else %}
+            <h1 class="createPost">
+                {{detail.user.username}}
+                <a href=" {% url 'unfollow' detail.id%}">
+                    <button type="button" name="button" class="btn btn-primary btn-md pull-right">Unfollow </button>
+                </a>
+            </h1>
+            {% endif %}
+
+
+            <hr>
+            <img src="{{detail.profile_photo.url}}" alt="{{request.user.username}}" class="img-responsive" id="circular-image" style="height:300px; width:300px; border-radius:55%;">
+            <hr>
+            <p>{{detail.bio}}</p>
+
+
+
+            {% endfor %}
+
+            <!-- end user details -->
+
+        </div>
+     </div>
+
+
+
+
+        <!-- Current User's Posts  -->
+
+                <div style=" border:2px; padding-top:70px" >
+                   <div class="container" style="background-color:#729eac; border-radius:35px; font-family: 'Lobster Two', cursive;">
+                <div class=" col-md-4">
+                  {% for pic in pics %}
+                  <div class="container">
+                     <div class=" col-md-6">
+                    <a href="{% url 'singleImage' pic.id %}">
+                      <img src="{{pic.image.url}}" alt="{{Image.image_name}}" class="img-responsive "  style=" height:300px; width:300px; border-radius:35%;" >
+                    </a>
+                  </div>
+               </div>
+
+            {% endfor %}
+        </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+</body>
+{% endblock %}
