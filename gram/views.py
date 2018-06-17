@@ -100,25 +100,25 @@ def otherprofiles(request, prof_id):
 
     return render(request, 'userprofiles.html', { "nbr": nbr, "current_user": current_user, "info": info, "pics": pics, "check_if_following": check_if_following})
 
-# @login_required(login_url='/accounts/login')
-# def new_post(request):
-#     '''
-#     View function to display a form for creating a post to a logged user
-#     '''
-#     current_user = request.user
+@login_required(login_url='/accounts/login')
+def new_post(request):
+    '''
+    View function to display a form for creating a post to a logged user
+    '''
+    current_user = request.user
 
-#     if request.method == 'POST':
+    if request.method == 'POST':
 
-#         form = ImagePostForm(request.POST, request.FILES)
+        form = ImagePostForm(request.POST, request.FILES)
 
-#         if form.is_valid:
-#             post = form.save(commit=False)
-#             post.user = current_user
-#             post.save()
-#             return redirect(profile)
-#     else:
-#         form = ImagePostForm()
-#     return render(request, 'posts.html', {"form": form})
+        if form.is_valid:
+            post = form.save(commit=False)
+            post.user = current_user
+            post.save()
+            return redirect(profile)
+    else:
+        form = ImagePostForm()
+    return render(request, 'posts.html', {"form": form})
 
 
 # @login_required(login_url='/accounts/login/')
