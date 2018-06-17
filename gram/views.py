@@ -8,8 +8,8 @@ from django.contrib.auth.models import User
 
 
 # # Create your views here.
-# def welcome(request):
-#     return render(request, 'welcome.html')
+def welcome(request):
+    return render(request, 'welcome.html')
 
 
 # @login_required(login_url='/accounts/login')
