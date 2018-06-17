@@ -80,9 +80,9 @@ class Image(models.Model):
 #     class Meta:
 #         ordering = ['-date_uploaded']
 
-#     def save_image(self):
-#         '''Method to save an image in the database'''
-#         self.save()
+    def save_image(self):
+        '''Method to save an image in the database'''
+        self.save()
 
 #     def delete_image(self):
 #         ''' Method to delete an image from the database'''
