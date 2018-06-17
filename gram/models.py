@@ -114,14 +114,14 @@ class Comment(models.Model):
         return self.user.username
 
 
-#     @classmethod
-#     def get_post_comments(cls, post_id):
-#         ''' Function that gets all the comments belonging to a single post
-#         Args:
-#             post_id : specific post
-#         Returns:
-#             comments : List of Comment objects for the specified post
-#         '''
-#         comments_list = Comment.objects.filter(post=post_id)
+    @classmethod
+    def get_post_comments(cls, post_id):
+        ''' Function that gets all the comments belonging to a single post
+        Args:
+            post_id : specific post
+        Returns:
+            comments : List of Comment objects for the specified post
+        '''
+        comments_list = Comment.objects.filter(post=post_id)
 
-#         return comments_list
+        return comments_list
