@@ -142,15 +142,15 @@ def new_comment(request, image_id):
 
 
 
-# @login_required(login_url='/accounts/login')
-# def image(request, photo_id):
-#     '''
-#     View funtion to display a specific image with its details
-#     '''
-#     image = Image.objects.get(id=photo_id)
-#     user_info = Profile.objects.get(user=image.user.id)
-#     comments = Comment.objects.filter(post=image.id)
-#     return render(request, 'images.html', {'image': image, "user_info": user_info, "comments": comments})
+@login_required(login_url='/accounts/login')
+def image(request, photo_id):
+    '''
+    View funtion to display a specific image with its details
+    '''
+    image = Image.objects.get(id=photo_id)
+    user_info = Profile.objects.get(user=image.user.id)
+    comments = Comment.objects.filter(post=image.id)
+    return render(request, 'images.html', {'image': image, "user_info": user_info, "comments": comments})
 
 
 
