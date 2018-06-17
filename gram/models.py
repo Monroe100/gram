@@ -21,15 +21,15 @@ class Profile(models.Model):
         '''
         return self.user.username
 
-#     @classmethod
-#     def get_profiles(cls):
-#         '''
-#         Fucntion that gets all the profiles in the app
-#         Return
-#         '''
-#         profiles = Profile.objects.all()
+    @classmethod
+    def get_profiles(cls):
+        '''
+        Fucntion that gets all the profiles in the app
+        Return
+        '''
+        profiles = Profile.objects.all()
 
-#         return profiles
+        return profiles
 
 # class Posts(models.Model):
 #     photo = models.ImageField(upload_to='post', null=True)
