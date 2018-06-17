@@ -29,10 +29,10 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['comment']
 
-# class CreateProfileForm(forms.ModelForm):
-#     '''
-#     classs that creates a profile update form
-#     '''
-#     class Meta:
-#         model = Profile
-#         fields = ['profile_photo', 'bio', 'user']
+class CreateProfileForm(forms.ModelForm):
+    '''
+    classs that creates a profile update form
+    '''
+    class Meta:
+        model = Profile
+        fields = ['profile_photo', 'bio', 'user']
