@@ -21,13 +21,13 @@ class ImagePostForm(forms.ModelForm):
         fields = ['image', 'image_name', 'image_caption']
 
 
-# class CommentForm(forms.ModelForm):
-#     '''
-#     class that creates the comment form
-#     '''
-#     class Meta:
-#         model = Comment
-#         fields = ['comment']
+class CommentForm(forms.ModelForm):
+    '''
+    class that creates the comment form
+    '''
+    class Meta:
+        model = Comment
+        fields = ['comment']
 
 # class CreateProfileForm(forms.ModelForm):
 #     '''
