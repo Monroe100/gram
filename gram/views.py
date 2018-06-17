@@ -12,31 +12,31 @@ def welcome(request):
     return render(request, 'welcome.html')
 
 
-# @login_required(login_url='/accounts/login')
-# def home(request):
-#     '''
-#     View function to display different profiles of different users
-#     '''
+@login_required(login_url='/accounts/login')
+def home(request):
+    '''
+    View function to display different profiles of different users
+    '''
 
-#     current_user = request.user
+    current_user = request.user
 
-#     title = 'Instagram'
+    title = 'Instagram'
 
 
-#     users = Profile.get_profiles
+    users = Profile.get_profiles
 
-#     following = Follow.get_following(current_user.id)
+    following = Follow.get_following(current_user.id)
 
-#     images = []
-#     for followed in following:
-#         profiles = Profile.objects.filter(id=followed.profile.id)
-#         for profile in profiles:
-#             post = Image.objects.filter(user=profile.user)
+    images = []
+    for followed in following:
+        profiles = Profile.objects.filter(id=followed.profile.id)
+        for profile in profiles:
+            post = Image.objects.filter(user=profile.user)
 
-#             for image in post:
-#                 images.append(image)
+            for image in post:
+                images.append(image)
 
-#     return render(request, 'landing.html', {"images": images, "title": title,"following": following, "user": current_user, "users": users})
+    return render(request, 'landing.html', {"images": images, "title": title,"following": following, "user": current_user, "users": users})
 
 # @login_required(login_url='/accounts/login')
 # def create_profile(request):
