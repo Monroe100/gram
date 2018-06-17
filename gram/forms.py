@@ -12,13 +12,13 @@ class ProfileForm(forms.ModelForm):
         fields = ['profile_photo', 'bio', 'user']
 
 
-# class ImagePostForm(forms.ModelForm):
-#     '''
-#     Class to create a new post
-#     '''
-#     class Meta:
-#         model = Image
-#         fields = ['image', 'image_name', 'image_caption']
+class ImagePostForm(forms.ModelForm):
+    '''
+    Class to create a new post
+    '''
+    class Meta:
+        model = Image
+        fields = ['image', 'image_name', 'image_caption']
 
 
 # class CommentForm(forms.ModelForm):
