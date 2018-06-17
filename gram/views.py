@@ -1,10 +1,10 @@
-# from django.shortcuts import render, redirect
-# from django.http  import HttpResponse,Http404
-# from .models import Comment, Image, Tag, Profile,Posts,Follow
-# from django.contrib.auth.decorators import login_required
-# from .forms import ImagePostForm, CommentForm, ProfileForm,CreateProfileForm
-# from django.core.exceptions import ObjectDoesNotExist
-# from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.http  import HttpResponse,Http404
+from .models import Comment, Image, Tag, Profile,Posts,Follow
+from django.contrib.auth.decorators import login_required
+from .forms import ImagePostForm, CommentForm, ProfileForm,CreateProfileForm
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.models import User
 
 
 # # Create your views here.
