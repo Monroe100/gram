@@ -102,16 +102,16 @@ class Image(models.Model):
         return images
 
 
-# class Comment(models.Model):
-#     '''
-#     Class that defines a Comment on a Post
-#     '''
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     post = models.ForeignKey(Image, on_delete=models.CASCADE)
-#     comment = models.TextField(blank=True)
+class Comment(models.Model):
+    '''
+    Class that defines a Comment on a Post
+    '''
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Image, on_delete=models.CASCADE)
+    comment = models.TextField(blank=True)
 
-#     def __str__(self):
-#         return self.user.username
+    def __str__(self):
+        return self.user.username
 
 
 #     @classmethod
