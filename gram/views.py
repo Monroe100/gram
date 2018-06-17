@@ -154,45 +154,45 @@ def image(request, photo_id):
 
 
 
-# @login_required(login_url='/accounts/login')
-# def follow(request, id):
-#     '''
-#     View function  that add profiles of other users to your timeline
-#     '''
-#     current_user = request.user
+@login_required(login_url='/accounts/login')
+def follow(request, id):
+    '''
+    View function  that add profiles of other users to your timeline
+    '''
+    current_user = request.user
 
-#     follow_profile = Profile.objects.get(id=id)
+    follow_profile = Profile.objects.get(id=id)
 
-#     check_if_following = Follow.objects.filter(
-#         user=current_user, profile=follow_profile).count()
+    check_if_following = Follow.objects.filter(
+        user=current_user, profile=follow_profile).count()
 
-#     if check_if_following == 0:
+    if check_if_following == 0:
 
-#         following = Follow(user=current_user, profile=follow_profile)
+        following = Follow(user=current_user, profile=follow_profile)
 
-#         following.save()
-#     else:
-#         pass
+        following.save()
+    else:
+        pass
 
-#     return redirect(home)
+    return redirect(home)
 
 
-# @login_required(login_url='/accounts/login')
-# def unfollow(request, id):
-#     '''
-#     View function unfollow other users
-#     '''
-#     current_user = request.user
+@login_required(login_url='/accounts/login')
+def unfollow(request, id):
+    '''
+    View function unfollow other users
+    '''
+    current_user = request.user
 
-#     follow_profile = Profile.objects.get(id=id)
+    follow_profile = Profile.objects.get(id=id)
 
-#     following = Follow.objects.filter(
-#         user=current_user, profile=follow_profile)
+    following = Follow.objects.filter(
+        user=current_user, profile=follow_profile)
     
-#     for item in following:
-#         item.delete()
+    for item in following:
+        item.delete()
 
-#     return redirect(home)
+    return redirect(home)
 
 
 # def search_results(request):
