@@ -42,15 +42,15 @@ class Posts(models.Model):
         '''
         return self.user.username
 
-#     @classmethod
-#     def get_posts(cls):
-#         '''
-#         Fucntion that gets all the postss in the app
-#         Return
-#         '''
-#         posts = Posts.objects.all()
+    @classmethod
+    def get_posts(cls):
+        '''
+        Fucntion that gets all the postss in the app
+        Return
+        '''
+        posts = Posts.objects.all()
 
-#         return posts
+        return posts
 
 # class Follow(models.Model):
 #     '''
