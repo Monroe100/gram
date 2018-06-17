@@ -121,24 +121,24 @@ def new_post(request):
     return render(request, 'posts.html', {"form": form})
 
 
-# @login_required(login_url='/accounts/login/')
-# def new_comment(request, image_id):
-#     '''
-#     view function that enabels a user to add a comment on a post
-#     '''
-#     current_image = Image.objects.get(id=image_id)
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = CommentForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             comment = form.save(commit=False)
-#             comment.user = current_user
-#             comment.post = current_image
-#             comment.save()
-#         return redirect(image, current_image.id)
-#     else:
-#         form = CommentForm()
-#     return render(request, 'comment.html', {"form": form, "current_image": current_image})
+@login_required(login_url='/accounts/login/')
+def new_comment(request, image_id):
+    '''
+    view function that enabels a user to add a comment on a post
+    '''
+    current_image = Image.objects.get(id=image_id)
+    current_user = request.user
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = current_user
+            comment.post = current_image
+            comment.save()
+        return redirect(image, current_image.id)
+    else:
+        form = CommentForm()
+    return render(request, 'comment.html', {"form": form, "current_image": current_image})
 
 
 
