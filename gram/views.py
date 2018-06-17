@@ -75,30 +75,30 @@ def profile(request):
 
     return render(request, 'inherit/home.html', {"title": title, "current_user": current_user,"pic":pic,"info": info,})
 
-# @login_required(login_url='/accounts/login')
-# def otherprofiles(request, prof_id):
-#     '''
-#     View function to display a profile information of other users
-#     '''
-#     current_user = request.user
+@login_required(login_url='/accounts/login')
+def otherprofiles(request, prof_id):
+    '''
+    View function to display a profile information of other users
+    '''
+    current_user = request.user
 
-#     try:
+    try:
 
-#         info = Profile.objects.filter(id=prof_id)
+        info = Profile.objects.filter(id=prof_id)
 
-#         follow_profile = Profile.objects.get(id=prof_id)
+        follow_profile = Profile.objects.get(id=prof_id)
 
-#         check_if_following = Follow.objects.filter(
-#             user=current_user, profile=follow_profile).count()
+        check_if_following = Follow.objects.filter(
+            user=current_user, profile=follow_profile).count()
 
-#         pics = Image.objects.all().filter(user_id=prof_id)
-#         nbr = pics.count()
+        pics = Image.objects.all().filter(user_id=prof_id)
+        nbr = pics.count()
 
 
-#     except ObjectDoesNotExist:
-#         raise Http404()
+    except ObjectDoesNotExist:
+        raise Http404()
 
-#     return render(request, 'userprofiles.html', { "nbr": nbr, "current_user": current_user, "info": info, "pics": pics, "check_if_following": check_if_following})
+    return render(request, 'userprofiles.html', { "nbr": nbr, "current_user": current_user, "info": info, "pics": pics, "check_if_following": check_if_following})
 
 # @login_required(login_url='/accounts/login')
 # def new_post(request):
