@@ -31,16 +31,16 @@ class Profile(models.Model):
 
         return profiles
 
-# class Posts(models.Model):
-#     photo = models.ImageField(upload_to='post', null=True)
-#     name = models.TextField(null=True)
-#     caption = models.ForeignKey(User, on_delete=models.CASCADE)
+class Posts(models.Model):
+    photo = models.ImageField(upload_to='post', null=True)
+    name = models.TextField(null=True)
+    caption = models.ForeignKey(User, on_delete=models.CASCADE)
 
-#     def __str__(self):
-#         '''
-#         Display for posts in posts table
-#         '''
-#         return self.user.username
+    def __str__(self):
+        '''
+        Display for posts in posts table
+        '''
+        return self.user.username
 
 #     @classmethod
 #     def get_posts(cls):
