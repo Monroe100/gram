@@ -84,9 +84,9 @@ class Image(models.Model):
         '''Method to save an image in the database'''
         self.save()
 
-#     def delete_image(self):
-#         ''' Method to delete an image from the database'''
-#         self.delete()
+    def delete_image(self):
+        ''' Method to delete an image from the database'''
+        self.delete()
 
 #     def __str__(self):
 #         return self.image_name
