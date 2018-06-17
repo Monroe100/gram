@@ -4,8 +4,8 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from . import views
 
-# urlpatterns=[
-#     url('^$',views.welcome,name = 'welcome'),
+urlpatterns=[
+    url('^$',views.welcome,name = 'welcome'),
 #     url(r'^profile/',views.profile,name = 'profile'),
 #     url(r'^create/profile/', views.create_profile, name="createProfile"),
 #     url(r'^create/post/', views.new_post, name="NewPost"),
