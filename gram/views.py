@@ -195,18 +195,18 @@ def unfollow(request, id):
     return redirect(home)
 
 
-# def search_results(request):
+def search_results(request):
 
-#  if 'user' in request.GET and request.GET["user"]:
-#     search_term = request.GET.get("user")
-#     searched_users = User.objects.filter(username__icontains=search_term)
-#     message = f"{search_term}"
+ if 'user' in request.GET and request.GET["user"]:
+    search_term = request.GET.get("user")
+    searched_users = User.objects.filter(username__icontains=search_term)
+    message = f"{search_term}"
 
-#     for user in searched_users:
-#         found = Profile.objects.get(user=user.id)
+    for user in searched_users:
+        found = Profile.objects.get(user=user.id)
 
-#     return render(request, 'searched.html', {"message": message, "users": searched_users, "found": found})
+    return render(request, 'searched.html', {"message": message, "users": searched_users, "found": found})
 
-#  else:
-#      message = "You haven't searched for any user"
-#      return render(request, 'results.html', {"message": message})
+ else:
+     message = "You haven't searched for any user"
+     return render(request, 'results.html', {"message": message})
