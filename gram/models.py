@@ -67,15 +67,15 @@ class Follow(models.Model):
         following = Follow.objects.filter(user=user_id).all()
         return following
 
-# class Image(models.Model):
-#     image = models.ImageField(upload_to='photos/', null=True)
-#     image_name = models.CharField(max_length=30)
-#     image_caption = models.TextField(max_length=100, null=True, blank=True)
-#     likes = models.IntegerField(null=True, blank=True)
-#     date_uploaded = models.DateTimeField(auto_now_add=True, null=True)
-#     profile = models.ForeignKey(
-#     Profile, null=True, blank=True, on_delete=models.CASCADE)
-#     user = models.ForeignKey(User)
+class Image(models.Model):
+    image = models.ImageField(upload_to='photos/', null=True)
+    image_name = models.CharField(max_length=30)
+    image_caption = models.TextField(max_length=100, null=True, blank=True)
+    likes = models.IntegerField(null=True, blank=True)
+    date_uploaded = models.DateTimeField(auto_now_add=True, null=True)
+    profile = models.ForeignKey(
+    Profile, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User)
 
 #     class Meta:
 #         ordering = ['-date_uploaded']
