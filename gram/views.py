@@ -38,42 +38,42 @@ def home(request):
 
     return render(request, 'landing.html', {"images": images, "title": title,"following": following, "user": current_user, "users": users})
 
-# @login_required(login_url='/accounts/login')
-# def create_profile(request):
-#     '''
-#     View function to create a profile
-#     '''
-#     current_user = request.user
+@login_required(login_url='/accounts/login')
+def create_profile(request):
+    '''
+    View function to create a profile
+    '''
+    current_user = request.user
 
-#     profiles = Profile.objects.filter(user=current_user).count()
+    profiles = Profile.objects.filter(user=current_user).count()
 
-#     if request.method == 'POST':
-#         form = CreateProfileForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             create_profile = form.save(commit=False)
-#             create_profile.user = current_user
-#             create_profile.save()
+    if request.method == 'POST':
+        form = CreateProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            create_profile = form.save(commit=False)
+            create_profile.user = current_user
+            create_profile.save()
 
-#     else:
-#         form = CreateProfileForm()
+    else:
+        form = CreateProfileForm()
 
-#     return render(request, 'create-profile.html', {"form": form})
+    return render(request, 'create-profile.html', {"form": form})
 
-# @login_required(login_url='/accounts/login/')
-# def profile(request):
-#     '''
-#     View function to display the profile of the logged in user when they click on the user name
-#     '''
-#     current_user = request.user
-#     print(current_user)
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    '''
+    View function to display the profile of the logged in user when they click on the user name
+    '''
+    current_user = request.user
+    print(current_user)
 
-#     title = 'Instagram'
+    title = 'Instagram'
 
-#     info = Profile.objects.filter(user_id=current_user.id).only().first()
+    info = Profile.objects.filter(user_id=current_user.id).only().first()
 
-#     pic = Image.objects.all()
+    pic = Image.objects.all()
 
-#     return render(request, 'inherit/home.html', {"title": title, "current_user": current_user,"pic":pic,"info": info,})
+    return render(request, 'inherit/home.html', {"title": title, "current_user": current_user,"pic":pic,"info": info,})
 
 # @login_required(login_url='/accounts/login')
 # def otherprofiles(request, prof_id):
