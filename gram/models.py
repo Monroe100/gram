@@ -62,10 +62,10 @@ class Follow(models.Model):
     def __str__(self):
         return self.user.username
 
-#     @classmethod
-#     def get_following(cls, user_id):
-#         following = Follow.objects.filter(user=user_id).all()
-#         return following
+    @classmethod
+    def get_following(cls, user_id):
+        following = Follow.objects.filter(user=user_id).all()
+        return following
 
 # class Image(models.Model):
 #     image = models.ImageField(upload_to='photos/', null=True)
