@@ -81,12 +81,9 @@ WSGI_APPLICATION = 'clone.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DBNAME'),
-        'USER':config('DBUSER'),
-        'PASSWORD':config('DBPASSWORD')
-   }
+  'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+  )
 }
 
 
