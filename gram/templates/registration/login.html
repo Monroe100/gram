@@ -3,7 +3,7 @@
 <body style="font-family: 'Concert One', cursive; font-size:60px;">
 <div class="container">
   <div class="row">
-    <!-- Empty div -->
+    
     <div class="row">
     <div class="col-md-6">
 <img src="/static/log.jpeg" alt="responsive" height="600" width="600" >
@@ -13,31 +13,31 @@
       <p> Password or Username is incorrect </p>
       {% endif %}
       <div class="panel panel-default">
-        <b><em><h1 style="color:rgb(218, 85, 103); font-size:80px;"class="text-center">Instagram</h1></em></b>
+        <b><em><h1 style="color:rgb(150, 5, 36); font-size:80px;"class="text-center">Instagram</h1></em></b>
 
-        <div class="panel-heading" style="color:rgb(78, 5, 5);">
+        <div class="panel-heading" style="color:rgb(95, 46, 49);">
 
-          <h3 style="font-size:50px;" class="text-center">Sign In</h3>
+          <h3 style="font-size:40px;" class="text-center">Sign In</h3>
         </div>
-        <div class="panel-body"style="color:#D98880;"> -->
+        <div class="panel-body"style="color:#D98880;"> 
 
           <form style="font-size:50px;"action="/accounts/login/" method="post">
             {% csrf_token %} {% bootstrap_form form%}
 
             <div class="form-group">
-              <input style="font-size:40px;" type="submit" class="btn btn-primary btn-sm" value="Login">
+              <input style="font-size:30px;" type="submit" class="btn btn-primary btn-sm" value="Login">
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
 
           </form>
-<h4 style="font-size:30px;">Dont Have an account?<a style="color:rgb(161, 51, 147);" href="/accounts/register">Click here to Register</a></h4>
+<h4 style="font-size:30px;">Dont Have an account?<a style="color:rgb(68, 3, 3);" href="/accounts/register">Click here to Register</a></h4>
         </div>
 
       </div>
 </div>
-    </div> -->
-    <!-- empty div -->
+    </div> 
+    
     <div class="col-md-4"></div>
   </div>
 </div>

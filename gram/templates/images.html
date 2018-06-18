@@ -7,18 +7,18 @@
 <link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Arizonia|Fredericka+the+Great|Life+Savers|Montez|UnifrakturMaguntia" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 
-<body style="background-color:#4d7a8b;  font-family: 'Concert One', cursive;" >
+<body style="background-color:#f1f0f0;  font-family: 'Concert One', cursive;" >
 
-  <div style="font-family: 'Lobster Two', cursive;">
+  <div style=" font-family: 'Concert One', cursive;">
 
 
-<nav class="navbar navbar-inverse" style="background-color:#77abce;">
+<nav class="navbar navbar-inverse" style="background-color:#994343;">
 
   <div class="container-fluid">
 
     <div class="navbar-header">
-       <b><a style="font-size:40px;color:#5eccee;"class="navbar-brand" href="{% url 'profile' %}">Instagram</a></b>
-    </div> -->
+       <b><a style="font-size:40px;color:#660f0f;"class="navbar-brand" href="{% url 'profile' %}">Instagram</a></b>
+    </div> 
 
      <!-- Adding a search form  -->
     <div class="col-sm-4 col-md-4 navbar-right">
@@ -33,7 +33,7 @@
 
          </div>
         </form>
-     </div> -->
+     </div> 
      <!-- search form end -->
      <div class="col-sm-6 col-md-6" style="font-size:40px;">
             {% if user.is_authenticated %}
@@ -76,18 +76,18 @@
 
 </div>
 <div class="col-sm-6 col-md-offset-2" style="margin-top:10px">
-  <div class="well" style="background-color:#68afaf; margin-bottom:70px; border-radius:35px; font-family: 'Lobster Two', cursive;">
+  <div class="well" style="background-color:#581c30; margin-bottom:70px; border-radius:35px;  font-family: 'Concert One', cursive;">
     <div class="like" style="font-size:30px">
-    </div> -->
+    </div> 
 
     <!-- info of the user that posted -->
-    <header style="margin-top:20px; border-bottom: 1px solid rgb(191, 241, 245)">
+    <header style="margin-top:20px; border-bottom: 1px solid rgb(253, 113, 143)">
 
       <img src="{{user_info.profile_photo.url}}" alt="" style="height:100px;width:100px; border-radius:50%">
       <a href="{% url 'otherProfiles' image.user.id %}">
-          <p style="display:inline; margin-left:10px; color:rgb(88, 159, 218); font-weight:bolder; font-size:12px; margin-bottom:10px">{{image.user}}</p>
+          <p style="display:inline; margin-left:10px; color:rgb(175, 128, 128); font-weight:bolder; font-size:12px; margin-bottom:10px">{{image.user}}</p>
       </a>
-      <br><br> -->
+      <br><br> 
       <!-- end user info -->
 
       <!-- image posted -->
@@ -95,14 +95,14 @@
           <img src="{{image.image.url}}" style="height:70%; width:100%; margin-left:0px"class="img-responsive" >
       </div>
       <p style="display:inline; margin-left:10px; margin-top:10px; font-size:16px; margin-bottom:10px">{{image.image_caption}}</p>
-      <p style="font-size:12px; color:grey; margin-top:10px; margin-left:65% "> </p>
+      <p style="font-size:12px; color:rgb(235, 203, 61); margin-top:10px; margin-left:65% "> </p>
 
 
-    </header> -->
+    </header> 
     <!-- end image posted -->
 
  
-    <h3 style="text-decoration:none; color:rgb(99, 185, 185); font-size:15px"><a href="{% url 'Comment' image.id %}"><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</a></h3>
+    <h3 style="text-decoration:none; color:rgb(200, 223, 99); font-size:15px"><a href="{% url 'Comment' image.id %}"><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</a></h3>
     {% for comment in comments %}
     <p style="margin-bottom:-1px"><span style=" margin-right:10px; font-weight:bolder; font-size:15px">{{comment.user}}</span> {{comment.comment}}</p>
     {% endfor %}
