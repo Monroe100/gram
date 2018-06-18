@@ -77,8 +77,8 @@ class Image(models.Model):
     Profile, null=True, blank=True, on_delete=models.CASCADE)
     user = models.ForeignKey(User)
 
-#     class Meta:
-#         ordering = ['-date_uploaded']
+    class Meta:
+        ordering = ['-date_uploaded']
 
     def save_image(self):
         '''Method to save an image in the database'''
