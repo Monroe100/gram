@@ -95,14 +95,14 @@
           <img src="{{image.image.url}}" style="height:70%; width:100%; margin-left:0px"class="img-responsive" >
       </div>
       <p style="display:inline; margin-left:10px; margin-top:10px; font-size:16px; margin-bottom:10px">{{image.image_caption}}</p>
-      <p style="font-size:12px; color:rgb(235, 203, 61); margin-top:10px; margin-left:65% "> </p>
+      <p style="font-size:12px; color:rgb(226, 195, 212); margin-top:10px; margin-left:65% "> </p>
 
 
     </header> 
     <!-- end image posted -->
 
  
-    <h3 style="text-decoration:none; color:rgb(200, 223, 99); font-size:15px"><a href="{% url 'Comment' image.id %}"><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</a></h3>
+    <h3 style="text-decoration:none; color:rgb(218, 164, 209); font-size:15px"><a href="{% url 'Comment' image.id %}"><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</a></h3>
     {% for comment in comments %}
     <p style="margin-bottom:-1px"><span style=" margin-right:10px; font-weight:bolder; font-size:15px">{{comment.user}}</span> {{comment.comment}}</p>
     {% endfor %}
