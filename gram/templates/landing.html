@@ -10,12 +10,12 @@
   <div style="font-family: 'Concert One', cursive;">
 
 
-<nav class="navbar navbar-inverse" style="background-color:#39aca2;">
+<nav class="navbar navbar-inverse" style="background-color:#cfe7e5;">
 
    <div class="container-fluid">
 
      <div class="navbar-header">
-       <b><a style="font-size:40px;color:#200a0b;"class="navbar-brand" href="{% url 'profile' %}">Instagram</a></b>
+       <b><a style="font-size:40px;color:#050303;"class="navbar-brand" href="{% url 'profile' %}">Instagram</a></b>
      </div>
 
      <!-- Adding a search form  -->
@@ -32,7 +32,7 @@
 
          </div>
         </form>
-     </div> -->
+     </div> 
      <!-- search form end -->
     <div class="col-sm-6 col-md-6" style="font-size:40px;">
             {% if user.is_authenticated %}
@@ -70,7 +70,7 @@
    </div>
  </nav>
 <!--End of navbar-->
-<div class="container"  style=" width:50%; background-color:#f05f8f; border-radius:35px;  font-family: 'Concert One', cursive;">
+<div class="container"  style=" width:50%; background-color:#d6cace; border-radius:35px;  font-family: 'Concert One', cursive;">
 
     {%for profile in users %}
     <div class="row" style="font-family: 'Concert One', cursive;">

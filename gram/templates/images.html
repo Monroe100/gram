@@ -12,7 +12,7 @@
   <div style=" font-family: 'Concert One', cursive;">
 
 
-<nav class="navbar navbar-inverse" style="background-color:#61cfca;">
+<nav class="navbar navbar-inverse" style="background-color:#9ba8a8;">
 
   <div class="container-fluid">
 
@@ -81,11 +81,11 @@
     </div> 
 
     <!-- info of the user that posted -->
-    <header style="margin-top:20px; border-bottom: 1px solid rgb(253, 113, 143)">
+    <header style="margin-top:20px; border-bottom: 1px solid rgb(221, 207, 210)">
 
       <img src="{{user_info.profile_photo.url}}" alt="" style="height:100px;width:100px; border-radius:50%">
       <a href="{% url 'otherProfiles' image.user.id %}">
-          <p style="display:inline; margin-left:10px; color:rgb(175, 128, 128); font-weight:bolder; font-size:12px; margin-bottom:10px">{{image.user}}</p>
+          <p style="display:inline; margin-left:10px; color:rgb(211, 192, 192); font-weight:bolder; font-size:12px; margin-bottom:10px">{{image.user}}</p>
       </a>
       <br><br> 
       <!-- end user info -->
@@ -109,4 +109,4 @@
   </div>
 </div>
 
-{% endblock %} -->
+{% endblock %} 
