@@ -6,26 +6,26 @@
     
     <div class="row">
     <div class="col-md-6">
-<img src="/static/log.jpeg" alt="responsive" height="600" width="600" >
+<img src="/static/pic1.jpg" alt="responsive" height="500" width="900" >
  </div>
     <div class="col-md-4">
       {% if form.errors %}
       <p> Password or Username is incorrect </p>
       {% endif %}
       <div class="panel panel-default">
-        <b><em><h1 style="color:rgb(150, 5, 36); font-size:80px;"class="text-center">Instagram</h1></em></b>
+        <b><em><h1 style="color:rgb(7, 5, 5); font-size:60px;"class="text-center">Instagram</h1></em></b>
 
-        <div class="panel-heading" style="color:rgb(95, 46, 49);">
+        <div class="panel-heading" style="color:rgb(141, 40, 47);">
 
-          <h3 style="font-size:40px;" class="text-center">Sign In</h3>
+          <h3 style="font-size:20px;" class="text-center">Sign In</h3>
         </div>
         <div class="panel-body"style="color:#D98880;"> 
 
-          <form style="font-size:50px;"action="/accounts/login/" method="post">
+          <form style="font-size:20px;"action="/accounts/login/" method="post">
             {% csrf_token %} {% bootstrap_form form%}
 
             <div class="form-group">
-              <input style="font-size:30px;" type="submit" class="btn btn-primary btn-sm" value="Login">
+              <input style="font-size:20px;" type="submit" class="btn btn-primary btn-sm" value="Login">
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
